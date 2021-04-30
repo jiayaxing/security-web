@@ -1,0 +1,57 @@
+
+spring:
+  application:
+    name: auth-server
+  datasource:
+    url: jdbc:mysql://192.168.1.156:3306/security-web?useUnicode=true&characterEncoding=utf-8&autoReconnect=true
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+    hikari:
+      read-only: false
+      connection-timeout: 30000
+      idle-timeout: 600000
+      validation-timeout: 3000
+      max-lifetime: 180000
+      login-timeout: 5
+      maximum-pool-size: 60
+      minimum-idle: 10
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate.dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+  http:
+    encoding:
+      force: true
+      enabled: true
+      charset: utf-8
+server:
+  port: 8066
+  tomcat:
+    uri-encoding: UTF-8
+logging:
+  file: /logs/serverLogs/server.log
+  level:
+    org.springframework.web: INFO
+
+
+
+
+#spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL5InnoDBDialect
+#logging.level.org.springframework.web=INFO
+
+
+
+
+
+
+
+
+
+
+
+
+
+
